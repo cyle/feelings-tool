@@ -16,7 +16,7 @@ You'll also need to specify your team's hierarchy and email addresses in the `te
 
 You'll also need to open up the `template.html` file and customize the URL path to all of the images and the link in the body text.
 
-You'll also need to open up `send-email.php` and fill in some variables about your base URL, an SMTP server to send through, and what the "From" field will be set to in the emails.
+You'll also need to open up `send-email.php` and fill in some variables about your base URL, an SMTP server to send through, the full path to the `template.html` file, and what the "From" field will be set to in the emails.
 
 To install the database, use `create-feels-db.sql`, rename `dbconn.sample.php` to `dbconn.php` and edit it as needed.
 

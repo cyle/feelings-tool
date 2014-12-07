@@ -14,6 +14,7 @@
 $base_url = 'https://where-you-hosted.com/feelings/rate.php?uuid=';
 $smtp_host = 'smtp-server-to-send-mail-through.com';
 $mail_from = 'noreply@whatever.com';
+$template_path = '/path/to/this/dir/template.html';
 // OK DONE EDITING
 
 require_once('teams.php');
@@ -25,6 +26,8 @@ foreach ($teams as $team) {
 		$people_to_email[] = $member;
 	}
 }
+
+$people_to_email = array_unique($people_to_email);
 
 require_once('dbconn.php');
 
@@ -38,7 +41,7 @@ function generate_uuid() {
 	);
 }
 
-$mail_html_template = file_get_contents('template.html');
+$mail_html_template = file_get_contents($template_path);
 
 include('Mail.php');
 include('Mail/mime.php');
